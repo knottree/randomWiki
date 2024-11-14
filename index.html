@@ -8,15 +8,22 @@
 </head>
 <body>
   <h1>Explore a Random Wikipedia Article!</h1>
-  <button id="random-button">Take me There!</button>
+  <a id="random-link" href="#" target="_blank">Click Here</a>
   <script>
-    const button = document.getElementById('random-button');
-    button.addEventListener('click', function() {
+    const link = document.getElementById('random-link');
+
+    function getRandomArticle() {
       const randomIndex = Math.floor(Math.random() * articles.length);
       const randomArticle = articles[randomIndex];
-      console.log(randomArticle);
-      window.location.href = `https://en.wikipedia.org/wiki/${randomArticle}`;
-    });
+      return `https://en.wikipedia.org/wiki/${randomArticle}`;
+    }
+
+    function updateLink() {
+      link.href = getRandomArticle();
+      link.textContent = "Click Here to Explore!";
+    }
+
+    updateLink();
   </script>
 </body>
 </html>
