@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Random Wikipedia Article</title>
+  <script src="articles.js"></script>
 </head>
 <body>
   <h1>Explore a Random Wikipedia Article!</h1>
@@ -11,18 +12,9 @@
   <script>
     const button = document.getElementById('random-button');
     button.addEventListener('click', function() {
-      // How to pick a random article depends on storage method
-      let randomArticle;
-      // Using Text File approach
-      fetch('wiki_articles.txt')
-        .then(response => response.text())
-        .then(data => {
-          const articles = data.split('\n');
-          randomArticle = articles[Math.floor(Math.random() * articles.length)];
-        })
-        .then(() => {
-          window.location.href = `https://en.wikipedia.org/wiki/${randomArticle}`;
-        });
+      const randomIndex = Math.floor(Math.random() * articles.length);
+      const randomArticle = articles[randomIndex];
+      window.location.href = `https://en.wikipedia.org/wiki/${randomArticle}`;
     });
   </script>
 </body>
