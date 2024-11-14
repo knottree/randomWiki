@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Wikipedia Article</title>
+</head>
+<body>
+  <h1>Explore a Random Wikipedia Article!</h1>
+  <button id="random-button">Take me There!</button>
+  <script>
+    const button = document.getElementById('random-button');
+    button.addEventListener('click', function() {
+      // How to pick a random article depends on storage method
+      let randomArticle;
+      // Using Text File approach
+      // (Replace with your actual file path)
+      fetch('wiki_articles.txt')
+        .then(response => response.text())
+        .then(data => {
+          const articles = data.split('\n');
+          randomArticle = articles[Math.floor(Math.random() * articles.length)];
+        })
+        .then(() => {
+          window.location.href = `https://en.wikipedia.org/wiki/${randomArticle}`;
+        });
+    });
+  </script>
+</body>
+</html>
