@@ -14,7 +14,8 @@
     button.addEventListener('click', function() {
       const randomIndex = Math.floor(Math.random() * articles.length);
       const randomArticle = articles[randomIndex];
-      window.location.href = `https://en.wikipedia.org/wiki/${randomArticle}`;
+      console.log(randomArticle);
+    //  window.location.href = `https://en.wikipedia.org/wiki/${randomArticle}`;
     });
   </script>
 </body>
