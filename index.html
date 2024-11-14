@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Wikipedia Article</title>
+  <title>Random Wiki</title>
   <link rel="stylesheet" href="styles.css">
   <script src="articles.js"></script>
 </head>
 <body>
-  <h1>Explore a Random Wikipedia Article!</h1>
-  <a id="random-link" href="#" target="_blank">Loading articles...</a>
+  <h1>Learn about a random Math, Science, or History topic...</h1>
+  <a id="random-link" href="#" target="_blank"></a>
   <script>
     const link = document.getElementById('random-link');
 
@@ -21,7 +21,7 @@
 
     function updateLink() {
       link.href = getRandomArticle();
-      link.textContent = "Click Here to Explore!";
+      link.textContent = "NOW!";
     }
 
     updateLink();
